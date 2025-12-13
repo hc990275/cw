@@ -91,8 +91,8 @@ jobs:
                       
                       if ($SyncResponse.message -match "Successfully fetched" -or $SyncResponse.merge_type -eq "fast-forward") {
                           Write-Host " -> [成功更新]" -ForegroundColor Green
-                          # 添加到日志
-                          $LogEntries += "✅ **$RepoName** ($BranchName): 同步成功"
+                          # 添加到日志，仓库名作为超链接
+                          $LogEntries += "✅ [**$RepoName**](https://github.com/$RepoName) ($BranchName): 同步成功"
                       } else {
                           Write-Host " -> [状态: $($SyncResponse.message)]" -ForegroundColor Yellow
                       }
@@ -127,23 +127,23 @@ jobs:
                           } else {
                               # 情况B: 冲突 -> 必须记录！
                               Write-Host " -> [代码冲突]" -ForegroundColor Red
-                              $LogEntries += "⚠️ **$RepoName** ($BranchName): 同步失败 - **代码冲突** (无法自动合并，请手动解决)"
+                              $LogEntries += "⚠️ [**$RepoName**](https://github.com/$RepoName) ($BranchName): 同步失败 - **代码冲突** (无法自动合并，请手动解决)"
                           }
                       }
                       elseif ($StatusCode -eq 404) {
                           # 情况C: 上游没了
                           Write-Host " -> [上游丢失]" -ForegroundColor Red
-                          $LogEntries += "❌ **$RepoName** ($BranchName): 同步失败 - **上游仓库不存在** (可能已被原作者删除)"
+                          $LogEntries += "❌ [**$RepoName**](https://github.com/$RepoName) ($BranchName): 同步失败 - **上游仓库不存在** (可能已被原作者删除)"
                       }
                       elseif ($StatusCode -eq 422) {
                           # 情况D: 无法处理 (如历史记录不相关)
                           Write-Host " -> [无法处理]" -ForegroundColor Red
-                          $LogEntries += "❌ **$RepoName** ($BranchName): 同步失败 - **无法合并** (历史记录不相关/Git 错误)"
+                          $LogEntries += "❌ [**$RepoName**](https://github.com/$RepoName) ($BranchName): 同步失败 - **无法合并** (历史记录不相关/Git 错误)"
                       }
                       else {
                           # 情况E: 其他错误
                           Write-Host " -> [错误 $StatusCode]" -ForegroundColor Red
-                          $LogEntries += "❌ **$RepoName** ($BranchName): 同步失败 - HTTP $StatusCode ($ErrorMsg)"
+                          $LogEntries += "❌ [**$RepoName**](https://github.com/$RepoName) ($BranchName): 同步失败 - HTTP $StatusCode ($ErrorMsg)"
                       }
                   }
                   Start-Sleep -Milliseconds 100 # 防限流
