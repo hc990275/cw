@@ -66,13 +66,21 @@ jobs:
           
           foreach ($repo in $Forks) {
               $RepoName = $repo.full_name
-              $DefaultBranch = $repo.default_branch
-              $SyncUri = "$BaseUri/repos/$RepoName/merge-upstream"
-              
-              # 支持同步的多个分支，可以根据需求进行修改
-              $BranchesToSync = @($DefaultBranch, "develop") # 这里添加了 `develop` 分支
-              
-              foreach ($BranchName in $BranchesToSync) {
+              Write-Host ">>> 正在同步仓库: $RepoName"
+
+              # 获取仓库的所有分支
+              $BranchesUri = "$BaseUri/repos/$RepoName/branches"
+              try {
+                  $Branches = Invoke-RestMethod -Uri $BranchesUri -Headers $Headers -Method Get
+              } catch {
+                  Write-Error "获取分支失败: $($_.Exception.Message)"
+                  continue
+              }
+
+              # 对每个分支进行同步
+              foreach ($branch in $Branches) {
+                  $BranchName = $branch.name
+                  $SyncUri = "$BaseUri/repos/$RepoName/merge-upstream"
                   $Body = @{ branch = $BranchName } | ConvertTo-Json -Compress
                   
                   # 控制台显示进度
@@ -192,4 +200,7 @@ jobs:
             git add README.md
             git commit -m "docs: update sync log with status [skip ci]"
             git push
+            echo "✅ 日志已更新并推送。"
+          else
+            echo "✅ 日志无变化。"
           fi
