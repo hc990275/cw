@@ -2,6 +2,17 @@
 
 此文件由 GitHub Actions 自动生成，仅保留最近 7 天记录。
 
+## 📅 2025-12-26 00:20 (北京时间)
+
+- ⚠️ [**hc990275/baobaolian1**](https://github.com/hc990275/baobaolian1) (hug): 同步失败 - **代码冲突** (无法自动合并，请手动解决)
+- ❌ [**hc990275/baobaolian1**](https://github.com/hc990275/baobaolian1) (main): 同步失败 - **无法合并** (历史记录不相关/Git 错误)
+- ✅ [**hc990275/fmapp**](https://github.com/hc990275/fmapp) (app): 同步成功
+- ✅ [**hc990275/so-novel**](https://github.com/hc990275/so-novel) (main): 同步成功
+- ✅ [**hc990275/V2ray-Config**](https://github.com/hc990275/V2ray-Config) (main): 同步成功
+- ✅ [**hc990275/yxip**](https://github.com/hc990275/yxip) (main): 同步成功
+
+此文件由 GitHub Actions 自动生成，仅保留最近 7 天记录。
+
 ## 📅 2025-12-25 23:16 (北京时间)
 
 - ⚠️ [**hc990275/baobaolian1**](https://github.com/hc990275/baobaolian1) (hug): 同步失败 - **代码冲突** (无法自动合并，请手动解决)
@@ -1541,15 +1552,6 @@
 - ✅ [**hc990275/fmapp**](https://github.com/hc990275/fmapp) (app): 同步成功
 - ⚠️ [**hc990275/fmapp**](https://github.com/hc990275/fmapp) (main): 同步失败 - **代码冲突** (无法自动合并，请手动解决)
 - ✅ [**hc990275/fmapp**](https://github.com/hc990275/fmapp) (ok): 同步成功
-- ✅ [**hc990275/tuic-hy2-node.js-python**](https://github.com/hc990275/tuic-hy2-node.js-python) (main): 同步成功
-- ✅ [**hc990275/V2ray-Config**](https://github.com/hc990275/V2ray-Config) (main): 同步成功
-
-此文件由 GitHub Actions 自动生成，仅保留最近 7 天记录。
-
-## 📅 2025-12-18 23:18 (北京时间)
-
-- ⚠️ [**hc990275/baobaolian1**](https://github.com/hc990275/baobaolian1) (hug): 同步失败 - **代码冲突** (无法自动合并，请手动解决)
-- ❌ [**hc990275/baobaolian1**](https://github.com/hc990275/baobaolian1) (main): 同步失败 - **无法合并** (历史记录不相关/Git 错误)
 - ✅ [**hc990275/tuic-hy2-node.js-python**](https://github.com/hc990275/tuic-hy2-node.js-python) (main): 同步成功
 - ✅ [**hc990275/V2ray-Config**](https://github.com/hc990275/V2ray-Config) (main): 同步成功
 
